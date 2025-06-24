@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const ForgotPassword = () => {
-  const url="https://user-managment-system-6lsj.onrender.com"
+  //const url="https://user-managment-system-6lsj.onrender.com"
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -11,7 +11,7 @@ const ForgotPassword = () => {
     setMessage('');
 
     try {
-      await axios.post('url/api/auth/forgot-password', { email });
+      await axios.post('https://user-managment-system-6lsj.onrender.com/api/auth/forgot-password', { email });
       setMessage('Password reset email sent. Please check your inbox.');
     } catch (error) {
       setMessage('Failed to send forgot password email.');

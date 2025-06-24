@@ -12,7 +12,7 @@ const roleBadgeColors = {
 };
 
 const Home = () => {
-  const url="https://user-managment-system-6lsj.onrender.com"
+//  const url="https://user-managment-system-6lsj.onrender.com"
   const [users, setUsers] = useState([]);
   const [error, setError] = useState('');
   const [showResetModal, setShowResetModal] = useState(false);
@@ -22,7 +22,7 @@ const Home = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('url/api/auth/users');
+      const response = await axios.get('https://user-managment-system-6lsj.onrender.com/api/auth/users');
       setUsers(response.data.map(user => ({ ...user, loggedIn: true })));
       setError('');
     } catch (error) {
@@ -37,7 +37,7 @@ const Home = () => {
 
   const handleForgotPassword = async (email) => {
     try {
-      await axios.post(`url/api/auth/forgot-password`, { email });
+      await axios.post(`https://user-managment-system-6lsj.onrender.com/api/auth/forgot-password`, { email });
       alert('Forgot password email sent.');
     } catch (err) {
       console.error(err);
@@ -56,7 +56,7 @@ const Home = () => {
       return;
     }
     try {
-      await axios.post(`url/api/auth/reset-password/${selectedUserId}`, { newPassword });
+      await axios.post(`https://user-managment-system-6lsj.onrender.com/api/auth/reset-password/${selectedUserId}`, { newPassword });
       alert('Password reset successful.');
     } catch (err) {
       console.error(err);
@@ -70,7 +70,7 @@ const Home = () => {
   const handleLogout = async (userId) => {
     if (window.confirm('Are you sure you want to logout this user?')) {
       try {
-        await axios.post(`url/api/auth/logout/${userId}`);
+        await axios.post(`https://user-managment-system-6lsj.onrender.com/api/auth/logout/${userId}`);
         alert('User logged out successfully.');
         setUsers(prevUsers => prevUsers.map(user =>
           user._id === userId ? { ...user, loggedIn: false } : user

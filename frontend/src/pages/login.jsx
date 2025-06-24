@@ -16,7 +16,7 @@ const Login = () => {
 
     try {
       // Send role along with email & password
-      const response = await axios.post('url/api/auth/login', { email, password, role });
+      const response = await axios.post(`${url}/api/auth/login`, { email, password, role });
 
       if (response.status === 200) {
         const { token } = response.data;
