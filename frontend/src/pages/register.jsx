@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Register = () => {
-  const url="https://user-managment-system-6lsj.onrender.com"
+ 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +15,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('url/api/auth/register', {
+      const response = await axios.post('https://user-managment-system-6lsj.onrender.com/api/auth/register', {
         name,
         email,
         password,
