@@ -5,7 +5,6 @@ import {jwtDecode} from 'jwt-decode'; // default import, not named
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
-  const url="https://user-managment-system-6lsj.onrender.com"
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('student'); // default role selected
@@ -16,7 +15,7 @@ const Login = () => {
 
     try {
       // Send role along with email & password
-      const response = await axios.post(`${url}/api/auth/login`, { email, password, role });
+      const response = await axios.post(`https://user-managment-system-6lsj.onrender.com/api/auth/login`, { email, password, role });
 
       if (response.status === 200) {
         const { token } = response.data;
