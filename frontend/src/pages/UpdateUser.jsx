@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const UpdateUser = () => {
-  const url="https://user-managment-system-6lsj.onrender.com"
+  //const url="https://user-managment-system-6lsj.onrender.com"
   const { id } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState({ name: '', email: '', role: '' });
@@ -11,7 +11,7 @@ const UpdateUser = () => {
 
   useEffect(() => {
     // Fetch user details
-    axios.get(`url/api/auth/users`)
+    axios.get(`https://user-managment-system-6lsj.onrender.com/api/auth/users`)
       .then(res => {
         const found = res.data.find(u => u._id === id);
         if (found) setUser(found);
