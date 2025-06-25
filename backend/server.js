@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 cors({
-  origin: '*', 
+  origin: 'https://user-managment-system-front.onrender.com', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 });
