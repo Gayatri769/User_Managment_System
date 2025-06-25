@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
-  const url="https://user-managment-system-6lsj.onrender.com"
+  //const url="https://user-managment-system-6lsj.onrender.com"
   const { id } = useParams();
   const [newPassword, setNewPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post(`url/api/auth/reset-password/${id}`, { newPassword });
+      await axios.post(`https://user-managment-system-6lsj.onrender.com/api/auth/reset-password/${id}`, { newPassword });
       setMessage('Password reset successful.');
       setTimeout(() => navigate('/'), 1500);
     } catch {
